@@ -41,15 +41,8 @@ namespace FoodTruckLocationsMap.Controllers
 
             var streamTask = client.GetStreamAsync(FoodTruckJsonUrl);
 
-            try
-            {
-                foodTruckLocations = await JsonSerializer.DeserializeAsync<List<FoodTruckLocation>>(await streamTask);
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-
+            foodTruckLocations = await JsonSerializer.DeserializeAsync<List<FoodTruckLocation>>(await streamTask);
+            
             return foodTruckLocations;
         }
 
