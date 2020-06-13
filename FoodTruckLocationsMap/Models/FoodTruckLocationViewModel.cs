@@ -14,7 +14,7 @@ namespace FoodTruckLocationsMap.Models
         public string Longitude { get; set; }
 
         [JsonPropertyName("foodTruckLocations")]
-        public IEnumerable<FoodTruckLocation> FoodTruckLocations { get; set; } 
+        public List<FoodTruckLocation> FoodTruckLocations { get; set; } 
     }
 
     public class FoodTruckLocation

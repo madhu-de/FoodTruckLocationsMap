@@ -27,7 +27,7 @@ namespace FoodTruckLocationsMap.Controllers
             var foodTruckLocationsWithDistance = CalculateDistancesToFoodTrucks(
                 foodTruckLocationViewModel.Latitude, foodTruckLocationViewModel.Longitude, foodTruckLocations);
 
-            foodTruckLocationViewModel.FoodTruckLocations = foodTruckLocationsWithDistance;
+            foodTruckLocationViewModel.FoodTruckLocations = foodTruckLocationsWithDistance.ToList();
 
             return View(foodTruckLocationViewModel);
         }
