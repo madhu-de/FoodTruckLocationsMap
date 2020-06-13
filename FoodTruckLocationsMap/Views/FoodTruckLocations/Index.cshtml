@@ -26,6 +26,7 @@
             });
             Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function () {
                 var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(5, map.getBounds());
+
                 map.entities.push(pushpins);
                 document.getElementById('printoutPanel').innerHTML = '<b>Five closest food trucks with the closest food truck having a distance of</b><br> '
                     + Microsoft.Maps.SpatialMath.getDistanceTo(pushpins[0].getLocation(), pushpins[1].getLocation(),
