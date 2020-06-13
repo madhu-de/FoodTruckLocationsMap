@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Truck Locations</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <style type='text/css'>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI',Helvetica,Arial,Sans-Serif
+        }
+    </style>
+</head>
+<body>
+    <form action="/FoodTruckLocations" method="post">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Latitude" />
+                <div class="col-md-10">
+                    <input class="form-control" type="text" data-val="true" data-val-number="The field Latitude must be a decimal number." data-val-required="The Latitude field is required." id="Latitude" name="Latitude" value="37.7749" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Latitude" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Longitude" />
+                <div class="col-md-10">
+                    <input class="form-control" type="text" data-val="true" data-val-number="The field Longitude must be a decimal number." data-val-required="The Longitude field is required." id="Longitude" name="Longitude" value="-122.4194" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Longitude" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Locate Food Trucks" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Inyxgp63fRFqUePGvuI5jGZsloJu1L7X9le1gy7NCIlSduCRx9jDQClrV9pOTTmqUyXnJBXhmrjcUVDJyDUMm7-MF_9rK8aAZdRdlOri7FmKVkRe_2v5LIHGKFcTjPrWPYnc9AdSbomkiOSaTEg7RU" />
+    </form>
+    </body>
+</html>

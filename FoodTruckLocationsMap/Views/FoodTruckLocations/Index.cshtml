@@ -1,0 +1,39 @@
+﻿@model FoodTruckLocationViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Truck Locations</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <style type='text/css'>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI',Helvetica,Arial,Sans-Serif
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Click to Load Map" onclick="loadSFOMap()" />
+    <div id='printoutPanel'></div>
+    <div id='sfoMap' style='width: 100vw; height: 100vh;'></div>
+    <script type='text/javascript'>function loadSFOMap() {
+            var map = new Microsoft.Maps.Map(document.getElementById('sfoMap'), {
+                credentials: 'Ap9BwF3pMipJo19wG6au12NRI4HtkuFUgib9MktVxFkolOwZlGbp2kEpdxfuJ_FV',
+                center: new Microsoft.Maps.Location(@Model.Latitude, @Model.Longitude),
+                mapTypeId: Microsoft.Maps.MapTypeId.road,
+                zoom: 10
+            });
+            Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function () {
+                var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(5, map.getBounds());
+                map.entities.push(pushpins);
+                document.getElementById('printoutPanel').innerHTML = '<b>Five closest food trucks with the closest food truck having a distance of</b><br> '
+                    + Microsoft.Maps.SpatialMath.getDistanceTo(pushpins[0].getLocation(), pushpins[1].getLocation(),
+                        Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+            });
+        }</script>
+    <script type='text/javascript'
+            src='https://www.bing.com/api/maps/mapcontrol?key=Ap9BwF3pMipJo19wG6au12NRI4HtkuFUgib9MktVxFkolOwZlGbp2kEpdxfuJ_FV&callback=loadGeneralSFOMap'
+            async defer></script>
+</body>
+</html>
