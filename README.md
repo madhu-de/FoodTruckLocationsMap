@@ -1,3 +1,4 @@
 # FoodTruckLocationsMap
 Help the SFO food connoisseurs - five closest food truck locations to user location shown on map
 
+This is a .Net Core Web MVC application that given the (current or specified) coordinates for the user, calls the San Francisco Data API to get the food trucks' locations JSON response and for each of the food trucks, calculates the distance from the location input by the user using GeoCoordinates and then displays the user location and the five closest food trucks locations on Bing Maps (the SFO Food Closest Truck Locations on Bing Maps pdf file in this repo./folder gives a preview of how the results look like on the map). On clicking the food truck pushpins, the user can get the name, address and food items offered by the food truck to help the SFO food connoisseur choose his/her lunch/dinner venue! :-)
